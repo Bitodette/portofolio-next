@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-left 25s linear infinite;
+  will-change: transform;
+  width: fit-content;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-content {
+    animation: none;
+  }
+}

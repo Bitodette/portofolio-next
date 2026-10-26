@@ -179,7 +179,7 @@ export default function LogoHero() {
         </svg>
       </motion.div>
 
-      {/* Mulut*/}
+      {/* mouth */}
       <motion.div
         className="absolute inset-0"
         style={{ x: moncong.x, y: moncong.y, z: MONCONG_Z, transformStyle: "preserve-3d" }}
@@ -199,7 +199,7 @@ export default function LogoHero() {
       </svg>
       </motion.div>
 
-      {/* Lidah  */}
+      {/* tongue */}
       <motion.div
         className="absolute inset-0"
         style={{ x: moncong.x, y: moncong.y, z: MONCONG_Z, transformStyle: "preserve-3d" }}

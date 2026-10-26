@@ -1,14 +1,5 @@
 import Link from "next/link";
-import { JetBrains_Mono } from "next/font/google";
-import { Fraunces } from "next/font/google";
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-});
+import { fraunces } from "../fonts";
 
 export default function Navbar() {
   return (
@@ -16,7 +7,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-7 py-4">
         <Link
           href="/"
-          className={`${fraunces.className} text-lg text-black hover:text-[#c15f3c] transition-colors`}
+          className={`${fraunces.className} text-2xl text-black hover:text-[#c15f3c] transition-colors`}
         >
           Faried
         </Link>

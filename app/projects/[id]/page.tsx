@@ -91,6 +91,10 @@ export default async function ProjectDetail(
             </div>
           )}
 
+          <p className={`${inter.className} text-lg text-gray-600 mt-8 leading-relaxed`}>
+            {project.desc}
+          </p>
+
           {project.plain && (
             <ProjectSection label="In a nutshell">
               <p className={`${inter.className} text-lg text-gray-600 leading-relaxed`}>
@@ -98,10 +102,6 @@ export default async function ProjectDetail(
               </p>
             </ProjectSection>
           )}
-
-          <p className={`${inter.className} text-lg text-gray-600 mt-8 leading-relaxed`}>
-            {project.desc}
-          </p>
 
           {project.why && (
             <ProjectSection label="Why I built this">

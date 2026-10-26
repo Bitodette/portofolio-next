@@ -28,7 +28,7 @@ export const projects: Project[] = [
   {
     id: "01",
     name: "Stepback Store",
-    desc: "I built the backend for an online shop, the part that runs everything after the buy button: what's in your cart, what it costs with shipping and tax, how you pay, and getting the order state in order.",
+    desc: "An online store backend covering carts, checkout with tax and shipping, Midtrans payments, and order status updates.",
     year: "2025",
     plain: "In short: customers can browse an online shop, pay with the payment methods they already use (bank transfer, GoPay, QRIS, minimarket), see real delivery prices for their address, and get an order email. My job was making sure all of that works reliably behind the scenes, even when a payment is late or fails and the shop has to put stock back automatically.",
     why: "This was the final project (UAS) for a course at my university, built in a small team where I owned the backend. I treated it as a test of how far past a CRUD demo I could get: what really happens the moment someone clicks \"pay\", how inventory stays sane when two people buy the last unit, and how a third-party payment always finds its way back into our system.",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     id: "05",
     name: "Line Follower",
-    desc: "A line follower robot I built from scratch for the Robotic track of OTN 2023. Hand-cut MDF chassis, standard gear motors, and a closed loop system I put together myself. It finished the whole track; the speed race was another story.",
+    desc: "A from-scratch line follower robot for OTN 2023: hand-cut MDF chassis, standard gear motors, and a closed loop system. It finished the whole track; the speed race was another story.",
     year: "2023",
     plain: "I built a working robot from scratch for a national robotics competition held in Bekasi. It was the first time my school had ever competed in this event, and our robot completed the entire course without a single wrong turn. We lost on speed, but the build, wiring, and programming were all ours from zero.",
     why: "I built this robot from scratch to represent my school, SMAN 28 Kabupaten Tangerang, at OTN 2023 (UNISMA Bekasi, December 16 to 17, 2023). It was our school's first line follower competition, so we just assumed DIY was the rule. Once we arrived, it turned out every other team was running factory kits. Either way, building it myself taught me the fundamentals: how the sensors, the motor driver, and the code talk to each other.",

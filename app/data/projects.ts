@@ -154,9 +154,8 @@ export const projects: Project[] = [
       { label: "Source code", href: "https://github.com/Bitodette/kelolain-dicoding" },
     ],
   },
-  { id: "04", name: "Nandur", desc: "asdasd.", year: "2026" },
   {
-    id: "05",
+    id: "04",
     name: "Line Follower",
     desc: "A from-scratch line follower robot for OTN 2023: hand-cut MDF chassis, standard gear motors, and a closed loop system. It finished the whole track; the speed race was another story.",
     year: "2023",

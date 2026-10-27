@@ -75,8 +75,85 @@ export const projects: Project[] = [
       { label: "Source code", note: "private repo" },
     ],
   },
-  { id: "02", name: "Spendio", desc: "asdasdasdasdasdasdadasdasdsdasdadasdasdsad asdasdasdasdasdasdadasdasdsdasdadasdasdsadasdasdasdasdasdasdadasdasdsdasdadasdasdsad.", year: "2025" },
-  { id: "03", name: "Kelola-in", desc: "asda.", year: "2026" },
+  {
+    id: "02",
+    name: "Spendio",
+    desc: "A personal expense tracker for accounts, transactions, budgets, recurring bills, and savings goals.",
+    year: "2026",
+    plain: "Spendio is an app for tracking my own money. I can add accounts, record income and expenses, set budgets, schedule repeating bills, and save toward a goal. The dashboard shows my balance and where my money went this month.",
+    why: "I wanted one place to see where my money went without updating a spreadsheet. It also gave me a reason to build a real backend instead of relying on Supabase.",
+    problem: "Spreadsheets get messy when money moves between accounts and bills repeat. Spendio keeps everything connected, so a transaction updates the right balance and the monthly summary at the same time.",
+    specs: [
+      {
+        label: "The app",
+        detail: "Next.js with Tailwind CSS. The dashboard, transactions, accounts, budgets, recurring bills, and savings pages are all built.",
+      },
+      {
+        label: "Backend",
+        detail: "Express and PostgreSQL, connected with Drizzle ORM. Shared Zod schemas keep request and response types in sync with the frontend.",
+      },
+      {
+        label: "Balances",
+        detail: "Every transaction runs in one database transaction, so two changes at once cannot make an account balance drift.",
+      },
+      {
+        label: "Login",
+        detail: "Better Auth handles email/password and Google login, and keeps the old Supabase passwords working.",
+      },
+      {
+        label: "Testing",
+        detail: "Unit tests and API smoke tests cover login, permissions, transfers, concurrent transactions, and pagination. CI runs them on every push.",
+      },
+    ],
+    result: "The rebuilt version works locally, but my real data is still on Supabase. The migration and cutover are the next step, and the backend is planned for Oracle Cloud. This project taught me a lot about auth, database transactions, and keeping money numbers correct.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Express", "PostgreSQL", "Drizzle ORM", "Better Auth", "Docker"],
+    links: [
+      { label: "Live demo", note: "runs locally" },
+      { label: "Source code", note: "private repo" },
+    ],
+  },
+  {
+    id: "03",
+    name: "Kelola.in",
+    desc: "A POS and business dashboard for small shops, with a cashier, stock tracking, finance reports, and AI insights.",
+    year: "2026",
+    plain: "Kelola.in is a web app for running a small shop. The cashier page handles sales and discounts, the product page tracks stock in batches, and the finance page shows revenue, expenses, and profit. There is also an AI page for sales predictions and product bundle ideas, plus a receipt scanner that reads a photo instead of making you type every item by hand.",
+    why: "This started as our Dicoding capstone. We wanted a project that felt like a real product, not a demo that only works on one screen. Small shops usually juggle a cashier app, a stock spreadsheet, and a notebook for expenses. We wanted to see if we could put all three in one place and make the data useful.",
+    problem: "The hard part is not showing a chart. It is keeping the numbers connected. When a sale happens, stock has to go down, the transaction has to be recorded, and profit has to use the cost of the batch that was actually sold. If those updates happen separately, the dashboard becomes fiction. Kelola.in handles them in one flow and scopes everything to the shop that owns the data.",
+    specs: [
+      {
+        label: "Cashier",
+        detail: "Product grid, cart, discounts, and checkout. A sale records the items, reduces stock, and feeds the finance page without a second entry.",
+      },
+      {
+        label: "Stock",
+        detail: "Products, categories, restocking, FIFO batches, and low-stock notifications. Cost of goods sold follows the oldest batch first, so profit is based on real batch costs.",
+      },
+      {
+        label: "Finance",
+        detail: "Revenue, expenses, profit, trends, and a filterable transaction history. The dashboard supports week, month, year, and custom ranges, with pagination on long lists.",
+      },
+      {
+        label: "AI and OCR",
+        detail: "Revenue prediction, demand forecasting, bundle suggestions, and receipt photo scanning with a blur check. My teammates built the models and data side; I integrated their service into the Express API and the React screens.",
+      },
+      {
+        label: "Access",
+        detail: "JWT login, bcrypt passwords, custom roles, page-level permissions, and separate data per organization. A user only sees the pages and records their role allows.",
+      },
+      {
+        label: "Stack",
+        detail: "React 19 and Vite on the frontend. Express 5, Prisma, PostgreSQL, and Upstash Redis on the backend. The frontend runs on Vercel, the API on Fly.io, and the database on Supabase.",
+      },
+    ],
+    result: "We shipped it as a working live app at kelolain.vercel.app, with the API on Fly.io. I was the fullstack developer: most of the Express API, the Prisma schema, the auth and permission flow, and a large part of the React app. The AI and data science work came from my teammates; my job was making their service usable inside the product. The live demo uses a test account (test / admin) if you want to click around.",
+    images: ["/kelola-in/keuangan.webp", "/kelola-in/insight.webp"],
+    stack: ["React", "Vite", "Tailwind CSS", "Express", "Prisma", "PostgreSQL", "Upstash Redis", "Docker"],
+    links: [
+      { label: "Live demo", href: "https://kelolain.vercel.app" },
+      { label: "Source code", href: "https://github.com/Bitodette/kelolain-dicoding" },
+    ],
+  },
   { id: "04", name: "Nandur", desc: "asdasd.", year: "2026" },
   {
     id: "05",
